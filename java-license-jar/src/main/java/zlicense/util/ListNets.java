@@ -29,7 +29,7 @@ public class ListNets {
 				sb.append(String.format("%02X%s", mac[i],
 						(i < mac.length - 1) ? "-" : ""));
 			}
-			System.out.println("mac=" + sb.toString());
+			System.out.println("ListNets.class displayInterfaceInformation  mac=" + sb.toString());
 		}
 
 		Enumeration<InetAddress> inetAddresses = netint.getInetAddresses();
@@ -54,7 +54,7 @@ public class ListNets {
 					sb.append(String.format("%02X%s", mac[i],
 							(i < mac.length - 1) ? "-" : ""));
 				}
-				System.out.println("mac=" + sb.toString());
+				System.out.println("ListNets.class validateMacAddress mac=" + sb.toString());
 			}
 			if (sb.toString().equals(macAddress)) {
 				returnFlag = true;
@@ -64,8 +64,7 @@ public class ListNets {
 
 	}
 
-	public static boolean validatoIpAndMacAddress(String ipAddress,
-			String macAddress) throws SocketException {
+	public static boolean validatoIpAndMacAddress(String ipAddress, String macAddress) throws SocketException {
 		boolean returnFlag = false;
 		Enumeration<NetworkInterface> nets = NetworkInterface
 				.getNetworkInterfaces();
@@ -77,7 +76,7 @@ public class ListNets {
 					sb.append(String.format("%02X%s", mac[i],
 							(i < mac.length - 1) ? "-" : ""));
 				}
-				System.out.println("mac=" + sb.toString());
+				System.out.println("validatoIpAndMacAddress mac=" + sb.toString());
 			}
 			if (sb.toString().equals(macAddress)) {
 				Enumeration<InetAddress> inetAddresses = netint
@@ -85,8 +84,7 @@ public class ListNets {
 				String ip = "";
 				for (InetAddress inetAddress : Collections.list(inetAddresses)) {
 					ip = inetAddress.getHostAddress();
-					System.out.println("InetAddress ip="
-							+ inetAddress.getHostAddress());
+					System.out.println("InetAddress ip=" + inetAddress.getHostAddress());
 					if (ipAddress.toString().equals(ip)) {
 						returnFlag = true;
 					}

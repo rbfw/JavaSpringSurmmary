@@ -360,9 +360,13 @@ public class LicenseManager implements LicenseCreator, LicenseVerifier {
 		
 		LicenseCheckModel licenseCheckModel = (LicenseCheckModel)paramLicenseContent.getExtra();
 		String macAddress = licenseCheckModel.getIpMacAddress();
-		
+		String ipAddress = licenseCheckModel.getIpAddress();
+
 		try {
-			if (!ListNets.validateMacAddress(macAddress)) {
+//			if (!ListNets.validateMacAddress(macAddress)) {
+//				throw new LicenseContentException(EXC_LICENSE_HAS_EXPIRED);
+//			}
+			if (!ListNets.validatoIpAndMacAddress(ipAddress, macAddress)) {
 				throw new LicenseContentException(EXC_LICENSE_HAS_EXPIRED);
 			}
 		} catch (SocketException e) {

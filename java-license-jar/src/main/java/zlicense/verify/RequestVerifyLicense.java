@@ -52,21 +52,18 @@ public class RequestVerifyLicense {
 
 	public boolean verify()  {		
 
-		LicenseManager licenseManager = LicenseManagerHolder
-				.getLicenseManager(initLicenseParams());
+		LicenseManager licenseManager = LicenseManagerHolder.getLicenseManager(initLicenseParams());
 		// install license file
 		try {
 			licenseManager.install(new File(licPath));
-					
 		} catch (Exception e) {
-			//e.printStackTrace();			
+			//e.printStackTrace();
 			String moreInfo ="License file verify failure";
 			System.out.println("moreInfo="+moreInfo);
 		}
 		// verify license file
 		try {
 			licenseManager.verify();
-			
 		} catch (Exception e) {
 			//e.printStackTrace();			
 			String moreInfo ="License file verify failure";

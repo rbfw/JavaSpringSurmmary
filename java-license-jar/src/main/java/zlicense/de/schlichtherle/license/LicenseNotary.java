@@ -113,8 +113,7 @@ public class LicenseNotary {
 			}
 			KeyStore localKeyStore = getKeyStore();
 			try {
-				this.privateKey = ((PrivateKey) localKeyStore.getKey(str2,
-						str1.toCharArray()));
+				this.privateKey = ((PrivateKey) localKeyStore.getKey(str2, str1.toCharArray()));
 			} catch (KeyStoreException localKeyStoreException) {
 				throw new AssertionError(localKeyStoreException);
 			}

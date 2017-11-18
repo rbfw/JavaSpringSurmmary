@@ -46,8 +46,7 @@ public class VerifyLicense {
 
 	public boolean verify() throws Exception  {		
 
-		LicenseManager licenseManager = LicenseManagerHolder
-				.getLicenseManager(initLicenseParams());
+		LicenseManager licenseManager = LicenseManagerHolder.getLicenseManager(initLicenseParams());
 		// install license file
 		try {
 			licenseManager.install(new File(licPath));
@@ -60,7 +59,7 @@ public class VerifyLicense {
 		}
 		// verify license file
 		try {
-			licenseManager.verify();			
+			licenseManager.verify();
 			System.out.println("License file verify successfully!");
 		} catch (Exception e) {
 			//e.printStackTrace();			
